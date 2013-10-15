@@ -1,9 +1,15 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title></title>
+    <title>自动登录提示框</title>
+    <meta charset="utf-8">
 </head>
 <body>
-
+<label  onmouseover="document.getElementById('div1').style.display='block'" onmouseout="document.getElementById('div1').style.display='none'">
+<input type="checkbox">自动登录
+</label>
+    <div id="div1" style="display:none;border:1px solid red;background-color: red; color:#fff;width:100px;height:100px;">
+    自动登录提示
+</div>
 </body>
 </html>
