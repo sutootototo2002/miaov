@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8">
+    <style type='text/css'>
+        #div1{width:100px;height:100px; background-color: red;}
+    </style>
+</head>
+<body>
+<div id='div1'>
+
+</div>
+</body>
+<script type='text/javascript'>
+    var div1=document.getElementById('div1');
+    div1.onmouseover=function(){
+        this.style.width='200px';
+        this.style.height='200px'
+    }
+    div1.onmouseout=function(){
+        this.style.width='100px';
+        this.style.height='100px'
+    }
+</script>
+</html>
