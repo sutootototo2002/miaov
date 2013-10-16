@@ -2,8 +2,36 @@
 <html>
 <head>
     <title>百度输入法效果</title>
+    <meta charset="utf-8">
+    <style type='text/css'>
+        *{margin:0;padding:0;font-size: 12px;}
+        ul,li{list-style-type: none;}
+        .main{margin:auto;width:100px;border:0px solid red;}
+        .nav{height:30px;line-height:30px;text-align:center;cursor:pointer;}
+        .ul_list{border:1px solid blue;width;90px;line-height:40px;}
+    </style>
 </head>
 <body>
-
+　　<div class='main'>
+    <div class='nav' id='nav'>输入法</div>
+      <ul class='ul_list' id='ul_list'>
+          <li>英文输入法</li>
+          <li>中文输入法</li>
+          <li>五笔输入法</li>
+      </ul>
+   </div>
+<script type='text/javascript'>
+    window.onload=function(){
+        var nav=document.getElementById('nav');
+        var ul_list=document.getElementById('ul_list');
+        nav.onclick=function(){
+            if(ul_list.style.display=="none"){
+                ul_list.style.display='block';
+            }else{
+                ul_list.style.display='none';
+            }
+        }
+    }
+</script>
 </body>
 </html>
