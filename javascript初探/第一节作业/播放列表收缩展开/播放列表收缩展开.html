@@ -2,8 +2,45 @@
 <html>
 <head>
     <title>播放列表收缩展开</title>
+    <meta charset="utf-8">
+    <style type='text/css'>
+        *{margin:0;padding:0;}
+        ul,li{list-style-type: none;}
+        .main{margin:auto;width:300px;border:1px solid #454545;overflow:hidden;}
+        .infoTitle{cursor:pointer;background:url(images/bg_b.png) no-repeat center right;background-color:#ccc;width:100%;height:30px; line-height:30px; text-align:center;border:0px solid red;}
+        .ul_list{display:none;}
+        .ul_list li{float:left:display:inline-block;height:30px; line-height: 30px;border:0px solid red; text-indent:20px;}
+    </style>
 </head>
 <body>
+<div class='main'>
+    <div class='infoTitle' id='infoTitle'>
+    播放列表
+    </div>
+    <ul class='ul_list' id='ul_list'>
+        <li>爱玩之徒-蔡依林</li>
+        <li>原谅我就是这样的女生-蔡依林</li>
+        <li>原谅我就是这样的女生-蔡依林</li>
+        <li>原谅我就是这样的女生-蔡依林</li>
+        <li>原谅我就是这样的女生-蔡依林</li>
+        <li>原谅我就是这样的女生-蔡依林</li>
+    </ul>
+</div>
 
 </body>
+<script type='text/javascript'>
+    window.onload=function(){
+        var infoTitle=document.getElementById('infoTitle');
+        var ul_list=document.getElementById('ul_list')
+        infoTitle.onclick=function(){
+            if(ul_list.style.display!='block'){
+                ul_list.style.display='block';
+                this.style.background='#ccc url(images/bg.png) no-repeat center right';
+            }else{
+                ul_list.style.display='none';
+                this.style.background='#ccc url(images/bg_b.png) no-repeat center right';
+            }
+        }
+    }
+</script>
 </html>
