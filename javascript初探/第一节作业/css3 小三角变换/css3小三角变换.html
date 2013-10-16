@@ -3,8 +3,30 @@
 <head>
     <title>css3小三角变换</title>
     <meta charset="utf-8">
+    <style type='text/css'>
+        .subDiv{position:relative;cursor:pointer;margin:auto;width:200px;height:40px; line-height:40px;border:1px solid red;text-align:center;}
+        .arrow{position:absolute;right:0;top:35%;overflow:hidden;width:0px;height:0px;borderleft:10px solid transparent;border-left-width: 10px;border-left-style: solid;border-left-color: transparent;border-right: 10px solid transparent;border-bottom: 10px solid red;font-size: 0px;line-height: 0px;
+            -moz-transform: rotate(180deg);-webkit-transform: rotate(180deg);-o-transform: rotate(180deg);transform: rotate(180deg);
+              }
+        .arrow:hover{}
+    </style>
 </head>
 <body>
-
+<div class='subDiv'>
+    <span id='btnDiv'>css3btn</span>
+    <span class='arrow' id='arrow'></span>
+</div>
+<script type='text/javascript'>
+    window.onload=function(){
+       var btnDiv=document.getElementById('btnDiv');
+       var arrow=document.getElementById('arrow');
+       btnDiv.onmouseover=function(){
+          arrow.style.cssText='-webkit-transform:rotate(360deg);-webkit-transition: all 0.5s ease-in-out;-moz-transition: all 0.5s ease-in-out;-o-transition: all 0.5s ease-in-out;transition: all 0.5s ease-in-out;';
+       }
+       btnDiv.onmouseout=function(){
+           arrow.style.cssText='-webkit-transform:rotate(180deg);-webkit-transition: all 0.5s ease-in-out;-moz-transition: all 0.5s ease-in-out;-o-transition: all 0.5s ease-in-out;transition: all 0.5s ease-in-out;';
+       }
+    }
+</script>
 </body>
 </html>
