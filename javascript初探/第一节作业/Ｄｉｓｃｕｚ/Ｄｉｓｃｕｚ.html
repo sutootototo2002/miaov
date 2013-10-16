@@ -6,25 +6,60 @@
     <style type='text/css'>
         /*css*/
      *{margin:0;padding:0;}
+     ul,li{ list-style-type: none;}
      html,body{ font-family: "微软雅黑"}
      img{display:block;}
-     body{ background-color: #ccc;}
+     body{ background-color: #000;}
      .main{display:inline-block;height:500px;background-color:#fcf9ea;padding:50px 20px 0 20px;}
      a.imgDiv{clear:both;padding:5px;background-color: #fff;border-bottom:1px solid #ccc; overflow:hidden;display:inline-block}
+     a.imgDiv_info{float:left;padding:5px 5px 5px 4px;margin-top:5px;background-color: #fff;border-bottom:1px solid #ccc; overflow:hidden;display:inline-block}
      a.maDiv{margin-top:15px;display:inline-block; color:#333; text-decoration: none; font-size:12px;}
      .user{ font-size:12px; color:#999;}
+     .infoDiv{display:none;background-color:#fff;border:1px solid #cdcdcd;position:absolute;padding:15px 20px;top:29px;left:0px;width:452px;height:164px;}
+    .ulDiv{float:left;display:inline-block;border:0px solid red;margin-left:20px;margin-top:10px;font-size:12px;color:#444;}
+    .ulDiv li a{ text-decoration:none; font-weight:bold; font-size: 12px; color:#a80000;padding:0 20px 0 0}
     </style>
 </head>
 <body>
 <div class='main'>
-<a href="#" class='imgDiv' title="点击查看"><img src='images/images.jpg'></a>
+<a href="#" class='imgDiv' title="点击查看" id="imgDiv"><img src='images/images.jpg'></a>
 <div style='clear:both'></div>
 <a href="#" class='maDiv'>管理员</a>
 <p class='user'>aaa</p>
+    <div class="infoDiv" id="infoDiv">
+    <a href="#" class='imgDiv_info' title="点击查看"><img src='images/images.jpg'></a>
+
+    <ul class="ulDiv">
+        <li><a href='#'>Leo</a><span>当前离线</span></li>
+
+    </ul>
+    </div>
 </div>
 </body>
 <script type='text/javascript'>
     //javascript
+    window.onload=function(){
+        var imgDiv=document.getElementById('imgDiv');
+        var infoDiv=document.getElementById('infoDiv');
+        imgDiv.onmouseover=function(){
+            display();
+        }
+        infoDiv.onmouseover=function(){
+            display();
+        }
 
+        infoDiv.onmouseout=function(){
+            undisplay();
+        }
+
+        function display(){
+            infoDiv.style.display='block';
+        }
+
+        function undisplay(){
+            infoDiv.style.display='none';
+        }
+
+    }
 </script>
 </html>
