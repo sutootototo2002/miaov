@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>全选功能</title>
+    <meta charset="utf-8">
+    <style type='text/css'>
+        .main{margin:auto;width:900px;border:0px solid red;}
+        label{display:inline-block;}
+    </style>
+</head>
+<body>
+<div class='main'>
+<label><input type='checkbox' id="lab"></label>全选
+<hr>
+    <div id='cDiv'>
+    <label><input type='checkbox'></label>
+    <div style='clear:both'></div>
+    <label><input type='checkbox'></label>
+    <div style='clear:both'></div>
+    <label><input type='checkbox'></label>
+    <div style='clear:both'></div>
+    <label><input type='checkbox'></label>
+    <div style='clear:both'></div>
+    <label><input type='checkbox'></label>
+    <div style='clear:both'></div>
+    <label><input type='checkbox'></label>
+    <div style='clear:both'></div>
+    <label><input type='checkbox'></label>
+    <div style='clear:both'></div>
+    <label><input type='checkbox'></label>
+    <div style='clear:both'></div>
+    <label><input type='checkbox'></label>
+    <div style='clear:both'></div>
+    <label><input type='checkbox'></label>
+    <div style='clear:both'></div>
+    </div>
+</div>
+</body>
+<script type='text/javascript'>
+    window.onload=function(){
+        var lab=document.getElementById('lab');
+        var cDiv=document.getElementById('cDiv');
+        var cBoxs=cDiv.getElementsByTagName('input');
+        lab.onclick=function(){
+            if(lab.checked==true){
+                for(var i =0,len=cBoxs.length;i<len;i++){
+                    cBoxs[i].checked=true;
+                }
+            }else{
+                //alert(lab.checked);
+                for(var i =0,len=cBoxs.length;i<len;i++){
+                    cBoxs[i].checked=false;
+                }              }
+
+        }
+    }
+</script>
+</html>
