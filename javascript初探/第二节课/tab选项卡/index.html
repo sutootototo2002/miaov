@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>tab选项卡</title>
+    <meta charset="utf-8">
+    <style type='text/css'>
+        *{margin:0;padding:0;}
+        ul,li{list-style-type: none}
+        .main{margin:auto;width:500px;overflow:hidden;border:1px solid red;}
+        .ul_{width:100%;border:1px solid red;}
+        .ul_ li{float:left;display:inline-block;width:100px;border:1px solid red;}
+        .content{display:block;clear:both;}
+        .content div{height:60px;border:1px solid red;}
+        .content .con1{display:none;}
+        .content .con2{display:none;}
+    </style>
+</head>
+<body>
+<div class='main'>
+    <ul class='ul_' id='ul_'>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+    </ul>
+    <div class='content' id='con'>
+        <div class='con0'>11111</div>
+        <div class='con1'>22222</div>
+        <div class='con2'>33333</div>
+    </div>
+</div>
+</body>
+<script type='text/javascript'>
+    window.onload=function(){
+       var ul_=document.getElementById('ul_');
+       var ul_lis=ul_.getElementsByTagName('li');
+       var con=document.getElementById('con');
+       var conDiv=con.getElementsByTagName('div');
+       for(var i= 0,len=ul_lis.length;i<len;i++){
+           ul_lis[i].index=i;
+           ul_lis[i].onclick=function(){
+              for(var j=0,lens=conDiv.length;j<lens;j++){
+                  conDiv[j].style.display='none';
+              }
+               conDiv[this.index].style.display='block';
+           }
+       }
+    }
+</script>
+</html>
